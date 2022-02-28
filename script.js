@@ -1,6 +1,7 @@
 
 
 const searchProduct = () => {
+    document.getElementById('spinner').style.display = 'block';
     const input_field = document.getElementById('input-field');
     const input_value = input_field.value;
     input_field.value = '';
@@ -16,6 +17,10 @@ const searchProduct = () => {
         <p class="mx-auto fs-1 w-50 text-danger">
         Please search by product Name</p>
         `
+        document.getElementById('details').innerHTML = '';
+
+        document.getElementById('spinner').style.display = 'none';
+
     }
     
 }
@@ -26,6 +31,7 @@ const getSearchProduct = data => {
         const parent = document.getElementById('parent');
         parent.innerHTML = '';
         document.getElementById('details').innerHTML = '';
+        document.getElementById('spinner').style.display = 'none';
         data.forEach(item => {
             const div = document.createElement('div');
             div.classList.add('col');
@@ -46,6 +52,10 @@ const getSearchProduct = data => {
         <p class="mx-auto fs-1 w-50 text-danger">
         This product is not available now</p>
         `
+        document.getElementById('details').innerHTML = '';
+
+        document.getElementById('spinner').style.display = 'none';
+
     }
 }
 
