@@ -21,7 +21,8 @@ const searchProduct = () => {
 }
 
 const getSearchProduct = data => {
-    console.log(data);
+    if (data !== null)
+    {
         const parent = document.getElementById('parent');
         parent.innerHTML = '';
         document.getElementById('details').innerHTML = '';
@@ -39,7 +40,13 @@ const getSearchProduct = data => {
         `;
             parent.appendChild(div);
         });
-    
+    }
+    else {
+        document.getElementById('parent').innerHTML = `
+        <p class="mx-auto fs-1 w-50 text-danger">
+        This product is not available now</p>
+        `
+    }
 }
 
 const showDetails = data => {
